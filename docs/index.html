@@ -52,6 +52,93 @@
 					</div>
 					<div></div>
 				</section>
+				<section>
+					Sysadmins have to configure systems
+				</section>
+				<section>
+					Keeping track of things is hard<br>
+					which system is doing what<br>
+					what do we patch when<br>
+					which stuff in on prem and what's in the cloud<br>
+					how do I install a mail server again?<br>
+				</section>
+				<section>
+					Documentation to the rescue!<br>
+					Word doc<br>
+					Text file<br>
+					1337 h4x0r shell script<br>
+					talking to yourself on slack<br>
+					bookmarks to stackoverflow answers<br>
+				</section>
+				<section>
+					Infrastructure as code<br>
+					you can use git!<br>
+					push/pull architectire<br>
+					https://en.wikipedia.org/wiki/Infrastructure_as_code<br>
+				</section>
+				<section>
+					SaltStack enables us to deploy configurations to servers and document the configuration
+				</section>
+				<section>
+					Saltstack is a client server technology that, by default, runs as root/SYSTEM on the client
+					you can use it to run commands, install software, update software, get information about systems, store information about systems, and declare all of this in code as "granular" as you like
+				</section>
+				<section>
+					install the master
+					make sure your clients can communicate with the master on 4505, 4506
+					name your master "salt", be default minions will ask for salt.{your dns-search}
+				</section>
+				<section>
+					install the minion(s)
+				</section>
+				<section>
+					accept the keys
+				</section>
+				<section>
+					run commands
+				</section>
+				<section>
+					grains
+				</section>
+				<section>
+					targeting
+					globbing
+						*
+						?
+						[1-5]
+						[1,3]
+					minion id
+					Grain G@
+					Lists L@
+					RegEx E@
+					Subnet S@
+					Compound
+					Node group
+				</section>
+				<section>
+					states
+					source control
+					yaml
+					jinja
+					the high state
+				</section>
+				<section>
+					pillars
+					target with pillars I@
+				</section>
+				<section>
+					the salt mine
+				</section>
+				<section>
+					runners
+				</section>
+				<section>
+					salt engines
+				</section>
+				<section>
+					extra bits
+					you can run salt clientless with salt-ssh
+				</section>
 			</div>
 		</div>
 
