@@ -1,0 +1,10 @@
+Sysadmins have to configure stuff
+    We spend hours upon hours reading the friendly manuals, watching youtube videos, reading quickstarts and tutorials.
+    A lot of what we owe our expertice to is the ability to google better than the next person.
+
+Keeping track of things is hard
+    which system is doing what
+    what do we patch when
+    which stuff in on prem and what's in the cloud
+    How do I join my linux systems to our windows domain again?
+
