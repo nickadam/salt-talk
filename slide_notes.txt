@@ -1,10 +1,21 @@
 Sysadmins have to configure stuff
     We spend hours upon hours reading the friendly manuals, watching youtube videos, reading quickstarts and tutorials.
-    A lot of what we owe our expertice to is the ability to google better than the next person.
+    A lot of what we owe our expertise to is the ability to google better than the next person.
+    So we end up with the responsibility to maintain and configure infrastructure
 
 Keeping track of things is hard
     which system is doing what
     what do we patch when
     which stuff in on prem and what's in the cloud
     How do I join my linux systems to our windows domain again?
+    How do we keep track of all the things?
 
+We document!
+    Here's a list of effective methods of documenting.
+    Shout out to my org mode folks?
+    I have used them all, you may have your preferred method.
+    But then we are still left with some problems.
+    Documentation can drift as the system evolves over time.
+    Where do we put all this documentation to it's accessible to the team?
+    How do we make the time to document what we are changing?
+    How do we keep track of changes to documentation and what that means to systems that are on the old way of doing things vs the new way?
