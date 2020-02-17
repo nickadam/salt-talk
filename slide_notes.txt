@@ -16,6 +16,6 @@ We document!
     I have used them all, you may have your preferred method.
     But then we are still left with some problems.
     Documentation can drift as the system evolves over time.
-    Where do we put all this documentation to it's accessible to the team?
+    Where do we put all this documentation so it's accessible to the team?
     How do we make the time to document what we are changing?
     How do we keep track of changes to documentation and what that means to systems that are on the old way of doing things vs the new way?
