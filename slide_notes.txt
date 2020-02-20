@@ -28,7 +28,19 @@ We document!
 Infrastructure as code
     We can write our infrastructure as code and store everything in git
     Using git we can keep track of what changed when and by creating descriptive comments for ourselves
-    Just by looking at the source code we can and answer, the what, how, why and who behind every infrastructure change
+    Just by looking at the source code we can and answer, the who, what, where, how, why behind every infrastructure change
     And we aren't documenting for the sake of documentation.
     We are describing, in code, the actual system level changes that will modify our configuration
+    So what does that look like?
 
+Xyz example
+    SaltStack enables us to deploy configurations to servers and document the configuration
+    What do we need, xyz installed
+    How are we installing it, package manager or script
+    We need to ensure it's installed or not, the "state" of the installation
+    Where are we installing xyz
+        Maybe specific servers A and C but not B
+        Or all servers that have a specific attribute like an IP address of 10.200.something
+    Then deploy our state
+        This is where you would leave a helpful git comment for future you
+        Git log will show us when, why, and who
