@@ -19,3 +19,16 @@ We document!
     Where do we put all this documentation so it's accessible to the team?
     How do we make the time to document what we are changing?
     How do we keep track of changes to documentation and what that means to systems that are on the old way of doing things vs the new way?
+    Personally, I hate documentation for the sake of documentation
+    You can't document well if you don't know your audience
+    Ideally the audience of my documentation is future me, and I don't know what future me is going to forget
+    I know from present me that past me was an idiot and did things in very wonky ways
+    So how can I keep all this documentation in a way that future me will thank past me and not think I'm an idiot
+
+Infrastructure as code
+    We can write our infrastructure as code and store everything in git
+    Using git we can keep track of what changed when and by creating descriptive comments for ourselves
+    Just by looking at the source code we can and answer, the what, how, why and who behind every infrastructure change
+    And we aren't documenting for the sake of documentation.
+    We are describing, in code, the actual system level changes that will modify our configuration
+
