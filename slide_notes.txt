@@ -31,7 +31,20 @@ Infrastructure as code
     Just by looking at the source code we can and answer, the who, what, where, how, why behind every infrastructure change
     And we aren't documenting for the sake of documentation.
     We are describing, in code, the actual system level changes that will modify our configuration
-    So what does that look like?
+
+SaltStack
+    Saltstack is a client server technology that, by default, runs as root/SYSTEM on the client
+    you can use it to:
+        run commands
+        install software
+        update software
+        get information about systems
+        store information about systems
+        and declare all of this in code as "granular" as you like
+    Get used to the salt puns, there are more to come
+    Notice the minions are calling into the master
+    One of the minions is in the "cloud"
+    So what does a configuration change look like in saltstack
 
 Xyz example
     SaltStack enables us to deploy configurations to servers and document the configuration
