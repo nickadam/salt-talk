@@ -92,3 +92,19 @@ vagrant@salt:~$ sudo salt-key --accept-all
 ```
 vagrant@salt:~$ sudo salt '*' test.ping
 ```
+
+## sudo aliases
+
+Save yourself some time and instead of typing `sudo` in front of every `salt` command make aliases for them on the master. Edit your `.bashrc` file and add the following:
+
+```
+alias salt="sudo salt"
+alias salt-call="sudo salt-call"
+alias salt-cp="sudo salt-cp"
+alias salt-key="sudo salt-key"
+alias salt-master="sudo salt-master"
+alias salt-minion="sudo salt-minion"
+alias salt-proxy="sudo salt-proxy"
+alias salt-run="sudo salt-run"
+alias salt-unity="sudo salt-unity"
+```
