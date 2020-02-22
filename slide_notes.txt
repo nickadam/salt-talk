@@ -57,3 +57,5 @@ Xyz example
     Then deploy our state
         This is where you would leave a helpful git comment for future you
         Git log will show us when, why, and who
+
+Lab time!
