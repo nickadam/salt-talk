@@ -68,3 +68,8 @@ Run commands
     You might be tempted to stop here and that would be perfectly understandable
     but let's see what else we can do
 
+Grains
+    Saltstack collects grains, bits of information about a host
+    You can also set a grain for a host
+    We can use grains to "target" systems
+
