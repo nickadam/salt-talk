@@ -73,3 +73,8 @@ Grains
     You can also set a grain for a host
     We can use grains to "target" systems
 
+Targeting
+    Without any switches, the default targeting uses shell style globbing
+    It's customary to surround the target with single quotes so the command doesn't conflict with your shell
+    We can also use lists, grains, subnets and many other methods for targeting
+    You can combine as many as you like in a compound matcher with boolean logic that supports parenthesis
