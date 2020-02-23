@@ -59,3 +59,12 @@ Xyz example
         Git log will show us when, why, and who
 
 Lab time!
+
+Run commands
+    Commands executed like this in saltstack happen in parallel
+    All machines connected to the salt master will independently run the command and return in whatever order they finish
+    And you'll be warned about minions that error
+    At this point we have an extremely powerful tool. One console with a constant root shell to everything connected to it.
+    You might be tempted to stop here and that would be perfectly understandable
+    but let's see what else we can do
+
