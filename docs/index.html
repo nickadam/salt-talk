@@ -163,11 +163,35 @@
 					not *fred'
 				</section>
 				<section>
-					states
-					source control
-					yaml
-					jinja
-					the high state
+					<img src="assets/xyz-state.png">
+				</section>
+				<section>
+					<span class="pop">S</span>a<span class="pop">L</span>t <span class="pop">S</span>tate file<br>
+					xyz.sls
+					<pre><code class="yml" data-trim>
+xyz:
+  pkg.installed
+          </code></pre>or
+    			<pre><code class="yml" data-trim>
+xyz:
+  cmd.script:
+    - source: salt://xyz-installed.sh
+          </code></pre>
+        </section>
+				<section>
+					git
+				</section>
+				<section>
+					<img src="assets/xyz-top.png">
+				</section>
+				<section>
+					top.sls
+				</section>
+				<section>
+					<img src="assets/xyz-highstate.png">
+				</section>
+				<section>
+					state.apply
 				</section>
 				<section>
 					pillars
