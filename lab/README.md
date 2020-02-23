@@ -26,18 +26,12 @@ vagrant box add debian/stretch64
 
 # Start systems
 
-Start each system by running `vagrant up` from each directory
+The Vagrant file provided here includes three systems; master, minion1, and minion2. All are connected to a private network. The hostname `salt` resolves to the master thanks to a static entry in each system's `/etc/hosts` file.
+
+Start all three systems by running `vagrant up`
 
 ```
-salt-talk/lab/master$ vagrant up
-```
-
-```
-salt-talk/lab/minion1$ vagrant up
-```
-
-```
-salt-talk/lab/minion2$ vagrant up
+salt-talk/lab$ vagrant up
 ```
 
 # Install salt master
@@ -45,7 +39,7 @@ salt-talk/lab/minion2$ vagrant up
 ssh to master and install curl and salt master using the bootstrap script
 
 ```
-salt-talk/lab/master$ vagrant ssh
+salt-talk/lab$ vagrant ssh master
 vagrant@salt:~$ sudo apt install curl
 vagrant@salt:~$ curl -L https://bootstrap.saltstack.com -o install_salt.sh
 vagrant@salt:~$ sudo sh install_salt.sh -P -M
@@ -56,7 +50,7 @@ vagrant@salt:~$ sudo sh install_salt.sh -P -M
 On each minion install curl and salt minion using the same bootstrap script with different options (no `-M` for master)
 
 ```
-salt-talk/lab/minion1$ vagrant ssh
+salt-talk/lab$ vagrant ssh minion1
 vagrant@minion1:~$ sudo apt install curl
 vagrant@minion1:~$ curl -L https://bootstrap.saltstack.com -o install_salt.sh
 vagrant@minion1:~$ sudo sh install_salt.sh -P
