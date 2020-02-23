@@ -96,35 +96,30 @@
 					</ol>
 				</section>
 				<section>
-					Install salt master
-					<div class="small">
-						<a href="https://asciinema.org/a/303892" target="_blank">asciinema.org/a/303892</a>
-					</div>
-					<div>
-						<script id="asciicast-303892" src="https://asciinema.org/a/303892.js" async></script>
-					</div>
+					<h3>Install salt master</h3>
+					<pre><code class="bash" data-trim>
+salt-talk/lab$ vagrant ssh master
+$ sudo apt install curl
+$ curl -L https://bootstrap.saltstack.com -o install_salt.sh
+$ sudo sh install_salt.sh -P -M
+					</code></pre>
 				</section>
 				<section>
-					Do the same thing on the minions<br>
-					Leave out "-M"
+					<h3>Install salt minions</h3>
+					<pre><code class="bash" data-trim>
+salt-talk/lab$ vagrant ssh minion1
+$ sudo apt install curl
+$ curl -L https://bootstrap.saltstack.com -o install_salt.sh
+$ sudo sh install_salt.sh -P
+					</code></pre>
 				</section>
 				<section>
-					Accept the keys
-					<div class="small">
-						<a href="https://asciinema.org/a/303903" target="_blank">asciinema.org/a/303903</a>
-					</div>
-					<div>
-						<script id="asciicast-303903" src="https://asciinema.org/a/303903.js" async></script>
-					</div>
+					<h3>Accept the keys</h3>
+					<img src="assets/accept-keys.png">
 				</section>
 				<section>
-					Test it<br>
-					<div class="small">
-						<a href="https://asciinema.org/a/303904" target="_blank">asciinema.org/a/303904</a>
-					</div>
-					<div>
-						<script id="asciicast-303904" src="https://asciinema.org/a/303904.js" async></script>
-					</div>
+					<h3>Test connectivity</h3>
+					<img src="assets/test.ping.png">
 				</section>
 				<section>
 					Run commands using cmd.run<br>
@@ -171,13 +166,14 @@
 					<pre><code class="yml" data-trim>
 xyz:
   pkg.installed
-          </code></pre>or
-    			<pre><code class="yml" data-trim>
+		  			</code></pre>
+		  or
+    				<pre><code class="yml" data-trim>
 xyz:
   cmd.script:
     - source: salt://xyz-installed.sh
-          </code></pre>
-        </section>
+          			</code></pre>
+        		</section>
 				<section>
 					git
 				</section>
