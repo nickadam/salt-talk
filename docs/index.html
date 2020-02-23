@@ -1,229 +1,240 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
-		<link rel="stylesheet" href="assets/my.css">
-		<link rel="stylesheet" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
+  <title>reveal.js</title>
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/monokai.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/black.css">
+  <link rel="stylesheet" href="assets/my.css">
+  <link rel="stylesheet" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class='header'>
-				github.com/nickadam/salt-talk
-			</div>
-			<div class="slides">
-				<section>
-					<h3>An intro to SaltStack</h3>
-					<img src="assets/saltlogo.png">
-					<div>
-						Software to automate [and document] the management and configuration of any infrastructure or application.
-					</div>
-				</section>
-				<section>
-					<h4>About Me</h4>
-					<img class="right" src="assets/me.png">
-					<div style="text-align: left;">
-						<h3>Nick Vissari</h3>
-						<div><i class="fa fa-twitter" aria-hidden="true"></i> <a href="https://twitter.com/nickadam" target="_blank">@nickadam</a></div>
-						<div><i class="fa fa-building-o" aria-hidden="true"></i> Work @ <a href="https://www.hcpss.org/">HoCo Public School System</a></div>
-						<div>Security Guy & DevSecOps Enthusiast</div><br>
-						<div class="small"><i class="fa fa-certificate" aria-hidden="true"></i>
-							<a href="https://www.wgu.edu/">BSCSIA@WGU</a> |
-							<a href="https://www.isc2.org/Certifications/CISSP">CISSP</a> |
-							<a href="https://www.isc2.org/Certifications/CCSP">CCSP</a></div>
-					</div>
-				</section>
-				<section>
-					Sysadmins have to configure systems<br>
-					<img src="assets/configuring.png">
-				</section>
-				<section>
-					Keeping track of things is hard<br>
-					<div style="width: 10em; display: block; margin: auto;">
-						<img src="assets/holdallinfra.png">
-					</div>
-				</section>
-				<section>
-					Documentation to the rescue!<br>
-					<ul>
-						<li>Word docs</li>
-						<li>Text files</li>
-						<li>Uber 1337 h4x0r shell scripts</li>
-						<li>Talking to yourself on slack</li>
-						<li>Bookmarks to stack overflow answers</li>
-					</ul>
-				</section>
-				<section>
-					Infrastructure as code!<br>
-					& track it all with git<br>
-					<img src="assets/iac.png"><br>
-					<a href="https://en.wikipedia.org/wiki/Infrastructure_as_code" target="_blank">wikipedia.org/wiki/Infrastructure_as_code</a><br>
-				</section>
-				<section>
-					<img src="assets/saltlogo.png">
-					<img src="assets/arch.png"><br>
-				</section>
-				<section>
-					<img src="assets/xyz.png"><br>
-				</section>
-				<section>
-					<h3>Lab/demo time!</h3>
-					<a href="https://github.com/nickadam/salt-talk/tree/master/lab" target="_blank">github.com/nickadam/salt-talk/tree/master/lab</a><br>
-					<ol>
-						<li>Start environment</li>
-						<li>Install salt master</li>
-						<li>Install salt minions</li>
-						<li>Accept keys</li>
-						<li>Test connectivity</li>
-					</ol>
-				</section>
-				<section>
-					<h3>Install salt master</h3>
-					<pre><code class="bash" data-trim>
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="lib/css/monokai.css">
+
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class='header'>
+      github.com/nickadam/salt-talk
+    </div>
+    <div class="slides">
+      <section>
+        <h3>An intro to SaltStack</h3>
+        <img src="assets/saltlogo.png">
+        <div>
+          Software to automate [and document] the management and configuration of any infrastructure or application.
+        </div>
+      </section>
+      <section>
+        <h4>About Me</h4>
+        <img class="right" src="assets/me.png">
+        <div style="text-align: left;">
+          <h3>Nick Vissari</h3>
+          <div><i class="fa fa-twitter" aria-hidden="true"></i> <a href="https://twitter.com/nickadam" target="_blank">@nickadam</a></div>
+          <div><i class="fa fa-building-o" aria-hidden="true"></i> Work @ <a href="https://www.hcpss.org/">HoCo Public School System</a></div>
+          <div>Security Guy & DevSecOps Enthusiast</div><br>
+          <div class="small"><i class="fa fa-certificate" aria-hidden="true"></i>
+            <a href="https://www.wgu.edu/">BSCSIA@WGU</a> |
+            <a href="https://www.isc2.org/Certifications/CISSP">CISSP</a> |
+            <a href="https://www.isc2.org/Certifications/CCSP">CCSP</a></div>
+        </div>
+      </section>
+      <section>
+        Sysadmins have to configure systems<br>
+        <img src="assets/configuring.png">
+      </section>
+      <section>
+        Keeping track of things is hard<br>
+        <div style="width: 10em; display: block; margin: auto;">
+          <img src="assets/holdallinfra.png">
+        </div>
+      </section>
+      <section>
+        Documentation to the rescue!<br>
+        <ul>
+          <li>Word docs</li>
+          <li>Text files</li>
+          <li>Uber 1337 h4x0r shell scripts</li>
+          <li>Talking to yourself on slack</li>
+          <li>Bookmarks to stack overflow answers</li>
+        </ul>
+      </section>
+      <section>
+        Infrastructure as code!<br>
+        & track it all with git<br>
+        <img src="assets/iac.png"><br>
+        <a href="https://en.wikipedia.org/wiki/Infrastructure_as_code" target="_blank">wikipedia.org/wiki/Infrastructure_as_code</a><br>
+      </section>
+      <section>
+        <img src="assets/saltlogo.png">
+        <img src="assets/arch.png"><br>
+      </section>
+      <section>
+        <img src="assets/xyz.png"><br>
+      </section>
+      <section>
+        <h3>Lab/demo time!</h3>
+        <a href="https://github.com/nickadam/salt-talk/tree/master/lab" target="_blank">github.com/nickadam/salt-talk/tree/master/lab</a><br>
+        <ol>
+          <li>Start environment</li>
+          <li>Install salt master</li>
+          <li>Install salt minions</li>
+          <li>Accept keys</li>
+          <li>Test connectivity</li>
+        </ol>
+      </section>
+      <section>
+        <h3>Install salt master</h3>
+        <pre><code class="bash" data-trim>
 salt-talk/lab$ vagrant ssh master
 $ sudo apt install curl
 $ curl -L https://bootstrap.saltstack.com -o install_salt.sh
 $ sudo sh install_salt.sh -P -M
-					</code></pre>
-				</section>
-				<section>
-					<h3>Install salt minions</h3>
-					<pre><code class="bash" data-trim>
+          </code></pre>
+      </section>
+      <section>
+        <h3>Install salt minions</h3>
+        <pre><code class="bash" data-trim>
 salt-talk/lab$ vagrant ssh minion1
 $ sudo apt install curl
 $ curl -L https://bootstrap.saltstack.com -o install_salt.sh
 $ sudo sh install_salt.sh -P
-					</code></pre>
-				</section>
-				<section>
-					<h3>Accept the keys</h3>
-					<img src="assets/accept-keys.png">
-				</section>
-				<section>
-					<h3>Test connectivity</h3>
-					<img src="assets/test.ping.png">
-				</section>
-				<section>
-					Run commands using cmd.run<br>
-					<img src="assets/run.png">
-				</section>
-				<section>
-					Errors are fun
-					<img src="assets/error2.png">
-				</section>
-				<section>
-					Grains<br>
-					<img src="assets/grains.items.png" style="width: 70%;">
-				</section>
-				<section>
-					<img src="assets/grains.get.png" style="width: 70%;">
-				</section>
-				<section>
-					<img src="assets/grains.set.png" style="width: 65%;">
-				</section>
-				<section>
-					<h3>Targeting minions</h3>
-					<ul>
-						<li>'server*' = server1 server2 server3 server-fred</li>
-						<li>'server?' = server1 server2 server3</li>
-						<li>'server[1,3]' = server1 server3</li>
-						<li>'server[1-3]' = server1 server2 server3</li>
-						<li>-L 'server1,server2'</li>
-						<li>-G 'role:worker' = whoever has the grain role=worker</li>
-						<li>-S '192.168.0.0/16' = whoever is in the subnet</li>
-					</ul>
-				</section>
-				<section>
-					<h3>Compound matchers</h3>
-					-C 'G@role:worker and <br>
-					G@os_family:debian and <br>
-					not *fred'
-				</section>
-				<section>
-					<img src="assets/xyz-state.png">
-				</section>
-				<section>
-					<span class="pop">S</span>a<span class="pop">L</span>t <span class="pop">S</span>tate file<br>
-					xyz.sls
-					<pre><code class="yml" data-trim>
+          </code></pre>
+      </section>
+      <section>
+        <h3>Accept the keys</h3>
+        <img src="assets/accept-keys.png">
+      </section>
+      <section>
+        <h3>Test connectivity</h3>
+        <img src="assets/test.ping.png">
+      </section>
+      <section>
+        Run commands using cmd.run<br>
+        <img src="assets/run.png">
+      </section>
+      <section>
+        Errors are fun
+        <img src="assets/error2.png">
+      </section>
+      <section>
+        Grains<br>
+        <img src="assets/grains.items.png" style="width: 70%;">
+      </section>
+      <section>
+        <img src="assets/grains.get.png" style="width: 70%;">
+      </section>
+      <section>
+        <img src="assets/grains.set.png" style="width: 65%;">
+      </section>
+      <section>
+        <h3>Targeting minions</h3>
+        <ul>
+          <li>'server*' = server1 server2 server3 server-fred</li>
+          <li>'server?' = server1 server2 server3</li>
+          <li>'server[1,3]' = server1 server3</li>
+          <li>'server[1-3]' = server1 server2 server3</li>
+          <li>-L 'server1,server2'</li>
+          <li>-G 'role:worker' = whoever has the grain role=worker</li>
+          <li>-S '192.168.0.0/16' = whoever is in the subnet</li>
+        </ul>
+      </section>
+      <section>
+        <h3>Compound matchers</h3>
+        -C 'G@role:worker and <br>
+        G@os_family:debian and <br>
+        not *fred'
+      </section>
+      <section>
+        <img src="assets/xyz-state.png">
+      </section>
+      <section>
+        <span class="pop">S</span>a<span class="pop">L</span>t <span class="pop">S</span>tate file<br>
+        xyz.sls
+        <pre><code class="yml" data-trim>
 xyz:
   pkg.installed
-		  			</code></pre>
-		  or
-    				<pre><code class="yml" data-trim>
+            </code></pre>
+        or
+        <pre><code class="yml" data-trim>
 xyz:
   cmd.script:
     - source: salt://xyz-installed.sh
-          			</code></pre>
-        		</section>
-				<section>
-					git
-				</section>
-				<section>
-					<img src="assets/xyz-top.png">
-				</section>
-				<section>
-					top.sls
-				</section>
-				<section>
-					<img src="assets/xyz-highstate.png">
-				</section>
-				<section>
-					state.apply
-				</section>
-				<section>
-					pillars
-					target with pillars I@
-				</section>
-				<section>
-					the salt mine
-				</section>
-				<section>
-					runners
-				</section>
-				<section>
-					salt engines
-				</section>
-				<section>
-					extra bits
-					you can run salt clientless with salt-ssh
-				</section>
-			</div>
-		</div>
+                </code></pre>
+      </section>
+      <section>
+        git
+      </section>
+      <section>
+        <img src="assets/xyz-top.png">
+      </section>
+      <section>
+        top.sls
+      </section>
+      <section>
+        <img src="assets/xyz-highstate.png">
+      </section>
+      <section>
+        state.apply
+      </section>
+      <section>
+        pillars
+        target with pillars I@
+      </section>
+      <section>
+        the salt mine
+      </section>
+      <section>
+        runners
+      </section>
+      <section>
+        salt engines
+      </section>
+      <section>
+        extra bits
+        you can run salt clientless with salt-ssh
+      </section>
+    </div>
+  </div>
 
-		<script src="js/reveal.js"></script>
+  <script src="js/reveal.js"></script>
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				hash: true,
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/highlight/highlight.js' },
-					{ src: 'plugin/notes/notes.js', async: true }
-				]
-			});
-		</script>
-	</body>
+  <script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+      hash: true,
+      dependencies: [{
+          src: 'plugin/markdown/marked.js'
+        },
+        {
+          src: 'plugin/markdown/markdown.js'
+        },
+        {
+          src: 'plugin/highlight/highlight.js'
+        },
+        {
+          src: 'plugin/notes/notes.js',
+          async: true
+        }
+      ]
+    });
+  </script>
+</body>
+
 </html>
