@@ -59,6 +59,19 @@ Xyz example
         Git log will show us when, why, and who
 
 Lab time!
+    start up our three systems one master and two minions all three are debian/stretch
+    install curl on all three and I'm going to install vim on the master since it's my editor of choice
+    install the salt using the bootstrap script
+    there's some magic happening in the background, the hostname "salt" resolves to the master
+    I do not need to specify the salt master but there is a parameter to do that if you want to name salt
+    something else or run salt over the internet.
+    The minions will accept the master's key by default. If you recreate the master without the a backup of the master's
+    key, the clients won't talk to the master anymore and you'll have to redeploy
+    Now on the master we have to accept the minion's keys, there is mutual authentication occurring here but this exchange is
+    susceptible to MITM so this should be done on a trusted network.
+    And if you are running on the internet you don't want to just accept all clients. I plan on putting together some material
+    on evil minions. We'll talk about that later.
+    Now let's make sure everything works by pinging all minions.
 
 Run commands
     Commands executed like this in saltstack happen in parallel
@@ -78,3 +91,15 @@ Targeting
     It's customary to surround the target with single quotes so the command doesn't conflict with your shell
     We can also use lists, grains, subnets and many other methods for targeting
     You can combine as many as you like in a compound matcher with boolean logic that supports parenthesis
+
+What is a state
+    A state is two things in one, first a check to ensure the system has whatever you want it to have, second is
+    whatever is required to take the system from it's current state to the state you want it to be in.
+    Here we have two different state files that demonstrate the same thing.
+    The first one is using saltstacks builtin abstration to the OSes package managager. On debian that's apt, if
+    this was centos it would be yum.
+    The second state file is more appropriate to use if the thing you want installed is not in the package manager.
+    Since we are working on script and naming things it's a good idea at this point to start tracking changes.
+    This is were git comes in.
+
+Git
