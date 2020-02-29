@@ -107,3 +107,23 @@ Git
     we'll delete it all and just start over with a fresh copy.
     By default salt states are stored in the salt file server at /srv/salt. Let's initialize /srv/ and keep track
     of our new states.
+
+Create a state file
+    For our first state file we'll do something simple. We'll use the OSes builtin package manager
+    to deploy screenfetch.
+    Now we can test our state file be deploying it to one minion.
+    It works, commit it!
+    Ok we have a working state file, what do we do with it?
+
+Now we can describe where this state gets deployed.
+
+top.sls
+    The top.sls file is a special significance. You can think of it like main. All minions will
+    look to the top.sls file when applying state. In salt world they call this the highstate.
+    I guess they ran out of puns. Or perhaps "seasoning" the systems was too much.
+    Now we deploy call state.apply to set however many minions we want to set their highstate.
+    Notice one of the minions failed hard. The reason there is that we called the state.apply
+    and that minion doesn't have any states to apply.
+    You should always be able to call state.apply to get your systems in the appropriate state
+    without fear of causing significant disruption.
+

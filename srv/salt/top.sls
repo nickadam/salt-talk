@@ -1,0 +1,3 @@
+base:
+  '*':
+    - screenfetch.installed
