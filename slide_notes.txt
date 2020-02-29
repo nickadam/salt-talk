@@ -103,3 +103,7 @@ What is a state
     This is were git comes in.
 
 Git
+    This isn't a talk on how to use git. We are just going to use what we need and if we screw it up, that's ok
+    we'll delete it all and just start over with a fresh copy.
+    By default salt states are stored in the salt file server at /srv/salt. Let's initialize /srv/ and keep track
+    of our new states.
