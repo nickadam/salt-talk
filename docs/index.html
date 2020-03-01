@@ -377,6 +377,12 @@ then
   echo export PATH=\$PATH:/usr/local/go/bin >> /etc/profile
 fi
         </code></pre>
+        <aside class="notes">
+          Here's another more complicated example. Installing the latest version of go. The version in package manager
+          differs from the latest version. Notice this script is separated into two parts. The first part downloads and
+          extracts go. The second adds the go bin path to the profile. If we were to run this script twice what would
+          happen the second time?
+        </aside>
       </section>
       <section>
         /srv/salt/go/installed.sls
@@ -385,9 +391,16 @@ go:
   cmd.script:
     - source: salt://go/installed.sh
         </code></pre>
+        <aside class="notes">
+          Now we create a state file that will execute the script from the salt file server.
+        </aside>
       </section>
       <section>
         <img src="assets/go.installed.png" style="width: 65%;">
+        <aside class="notes">
+          Here's what it looks like when we run this state a second time. Notice the state is "changed" but we know
+          nothing happened.
+        </aside>
       </section>
       <section>
         /srv/salt/top.sls
@@ -398,6 +411,9 @@ base:
   'salt':
     - go.installed
         </code></pre>
+        <aside class="notes">
+          Now we update our top file to describe where go will be installed.
+        </aside>
       </section>
       <section>
         pillars
