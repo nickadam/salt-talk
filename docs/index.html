@@ -186,14 +186,26 @@ git init
         </code></pre>
       </section>
       <section>
+        /srv/salt/screenfetch/installed.sls
+        <pre><code class="yml" data-trim>
+screenfetch:
+  pkg.installed
+        </code></pre>
+      </section>
+      <section>
+        Test it<br>
         <img src="assets/screenfetch1.png" style="width: 65%;"><br>
         ...<br>
         <img src="assets/screenfetch2.png" style="width: 65%;">
       </section>
       <section>
+        <img src="assets/screenfetch_works.png">
+      </section>
+      <section>
         <img src="assets/xyz-top.png">
       </section>
       <section>
+        /srv/salt/top.sls
         <pre><code class="yml" data-trim>
 base:
   'minion?':

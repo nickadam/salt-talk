@@ -127,3 +127,14 @@ top.sls
     You should always be able to call state.apply to get your systems in the appropriate state
     without fear of causing significant disruption.
 
+pillars
+    Pillars are tree-like structures of data defined on the Salt Master and passed through to minions.
+    They allow confidential, targeted data to be securely sent only to the relevant minion.
+    Think of what happens if a minion went evil. If you had to distribute secrets, you wouldn't want all
+    minions knowing all secrets. If you put your secrets in a state file, that's what you are doing. All
+    minions have access to all data in the salt file server. Not so with pillar data.
+
+/srv/pillar/users.sls
+
+/srv/pillar/top.sls
+
