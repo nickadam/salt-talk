@@ -416,6 +416,89 @@ base:
         </aside>
       </section>
       <section>
+        /srv/salt/netdata/installed.sh
+        <pre><code class="sh" data-trim>
+#!/bin/bash
+if [ ! -f "/usr/sbin/netdata" ]
+then
+  bash <(curl -Ss https://my-netdata.io/kickstart.sh)
+fi
+        </code></pre>
+        <aside class="notes">
+          Let's collect some telemetry using netdata. The kickstart script for netdata will complain about a bunch
+          missing packages and fail. So we have to include some dependencies.
+        </aside>
+      </section>
+      <section>
+        /srv/salt/netdata/deps.sls
+        <pre><code class="yml" data-trim>
+autoconf:
+  pkg.installed
+autoconf-archive:
+  pkg.installed
+autogen:
+  pkg.installed
+automake:
+  pkg.installed
+cmake:
+  pkg.installed
+gcc:
+  pkg.installed
+git:
+  pkg.installed
+libjudy-dev:
+  pkg.installed
+liblz4-dev:
+  pkg.installed
+libmnl-dev:
+  pkg.installed
+libssl-dev:
+  pkg.installed
+libuv1-dev:
+  pkg.installed
+make:
+  pkg.installed
+pkg-config:
+  pkg.installed
+uuid-dev:
+  pkg.installed
+zlib1g-dev:
+  pkg.installed
+        </code></pre>
+        <aside class="notes">
+          We can make a file that defines all the dependencies and ensure it's applied before we attempt to install netdata.
+        </aside>
+      </section>
+      <section>
+        /srv/salt/netdata/installed.sls
+        <pre><code class="yml" data-trim>
+include:
+  - netdata.deps
+netdata:
+  cmd.script:
+    - source: salt://netdata/installed.sh
+        </code></pre>
+        <aside class="notes">
+          Now we have a state file that includes another state file. These states are blocking and will execute in order.
+        </aside>
+      </section>
+      <section>
+        /srv/salt/top.sls
+        <pre><code class="yml" data-trim>
+base:
+  'minion?':
+    - screenfetch.installed
+  'salt':
+    - go.installed
+  'G@role:worker':
+    - netdata.installed
+        </code></pre>
+        <aside class="notes">
+          Finally we update the top.sls file to describe where netdata will be installed. Now when we run state.apply
+          nothing will happen since we are targeting systems with the grain role=worker.
+        </aside>
+      </section>
+      <section>
         pillars
         target with pillars I@
         <aside class="notes">

@@ -1,7 +1,7 @@
 base:
   '*':
     - screenfetch.installed
-  'L@role:worker':
+  'G@role:worker':
     - netdata.installed
   'salt':
     - go.installed
