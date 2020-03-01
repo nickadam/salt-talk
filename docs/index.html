@@ -221,7 +221,44 @@ base:
         <img src="assets/apply2.png" style="width: 65%;">
       </section>
       <section>
-        More examples <a href="https://github.com/nickadam/salt-talk/tree/master/srv/salt">github.com/nickadam/salt-talk/tree/master/srv/salt</a>
+        /srv/salt/go/installed.sh
+        <pre><code class="sh" data-trim>
+#!/bin/bash
+# Download and extract go
+if [ ! -f "/usr/local/go/bin/go" ]
+then
+  cd /root
+  wget -q https://dl.google.com/go/go1.14.linux-amd64.tar.gz
+  tar -C /usr/local -xzf /root/go1.14.linux-amd64.tar.gz
+  rm /root/go1.14.linux-amd64.tar.gz
+fi
+# Add go bin path to global profile
+if ! grep /usr/local/go/bin /etc/profile >/dev/null
+then
+  echo export PATH=\$PATH:/usr/local/go/bin >> /etc/profile
+fi
+        </code></pre>
+      </section>
+      <section>
+        /srv/salt/go/installed.sls
+        <pre><code class="yml" data-trim>
+go:
+  cmd.script:
+    - source: salt://go/installed.sh
+        </code></pre>
+      </section>
+      <section>
+        <img src="assets/go.installed.png" style="width: 65%;">
+      </section>
+      <section>
+        /srv/salt/top.sls
+        <pre><code class="yml" data-trim>
+base:
+  'minion?':
+    - screenfetch.installed
+  'salt':
+    - go.installed
+        </code></pre>
       </section>
       <section>
         pillars
