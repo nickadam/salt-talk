@@ -5,3 +5,5 @@ base:
     - netdata.installed
   'salt':
     - go.installed
+  'minion?':
+    - users.init
