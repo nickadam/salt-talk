@@ -499,12 +499,50 @@ base:
         </aside>
       </section>
       <section>
-        pillars
-        target with pillars I@
+        /srv/pillar/top.sls
+        <pre><code class="yml" data-trim>
+base:
+  '*':
+    - users
+        </code></pre>
+        /srv/pillar/users.sls
+        <pre><code class="yml" data-trim>
+users:
+  nick: 30001
+  tim: 30002
+  jen: 30003
+        </code></pre>
         <aside class="notes">
           Pillars are tree-like structures of data defined on the Salt Master and passed through to minions.<br>
           They allow confidential, targeted data to be securely sent only to the relevant minion.<br>
           Think of what happens if a minion went evil. If you had to distribute secrets, you wouldn't want all minions knowing all secrets. If you put your secrets in a state file, that's what you are doing. All minions have access to all data in the salt file server. Not so with pillar data.<br>
+          Here's an example that shows distributing a list of users and their ids to all minions.
+        </aside>
+      </section>
+      <section>
+        /srv/salt/users/init.sls
+        <pre><code class="yml" data-trim>
+{% for user, uid in pillar.get('users', {}).items() %}
+{{user}}:
+  user.present:
+    - uid: {{uid}}
+{% endfor %}
+        </code></pre>
+        becomes
+        <pre><code class="yml" data-trim>
+nick:
+  user.present:
+    - uid: 30001
+tim:
+  user.present:
+    - uid: 30002
+jen:
+  user.present:
+    - uid: 30003
+              </code></pre>
+        <aside class="notes">
+          Now we can create a state file that leverages the pillar. This looks a lot different that others we've seen.<br>
+          This is using a templating language called nijna. Between the curly braces is a little python and when this expands it makes more sense.
         </aside>
       </section>
       <section>
