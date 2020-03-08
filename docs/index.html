@@ -546,17 +546,37 @@ jen:
         </aside>
       </section>
       <section>
-        the salt mine
+        <h3>Summary</h3>
+        <ul>
+          <li>/srv/salt - <span class="pop">what</span> is deployed, <span class="pop">how</span></li>
+          <li>/srv/salt/top.sls - <span class="pop">where</span> are states deployed</li>
+          <li>Git - <span class="pop">who</span> did <span class="pop">what</span> <span class="pop">when</span></li>
+          <li>/srv/pillar - kinda secret store for data, great for complicated nijna stuff</li>
+          <li>/srv/pillar/top.sls - where the data goes</li>
+        </ul>
+        <aside class="notes">
+          Should you keep pillar data in source control?
+          Why shouldn't you use grains to target minions with pillar data?
+        </aside>
       </section>
       <section>
-        runners
+        <h3>Extra bits</h3>
+        <ul>
+          <li>docs.saltstack.com</li>
+          <li>python, yaml, jinja are our friends</li>
+          <li>salt-ssh - clientless salt</li>
+          <li>salt mine - dynamic data from minions for minions</li>
+          <li>salt runners - convenient programs for the master</li>
+        </ul>
+        <aside class="notes">
+          Salt mine useful for exchanging data between minions, wireguard public keys.
+          Salt runner could be used to interface with a drac or send messages to slack.
+        </aside>
       </section>
       <section>
-        salt engines
-      </section>
-      <section>
-        extra bits
-        you can run salt clientless with salt-ssh
+        <h1>Thanks</h1>
+        Go forth and DevOps!<br>
+        ...and have fun!
       </section>
     </div>
   </div>
