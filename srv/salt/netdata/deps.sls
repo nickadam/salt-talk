@@ -1,32 +1,20 @@
-autoconf:
-  pkg.installed
-autoconf-archive:
-  pkg.installed
-autogen:
-  pkg.installed
-automake:
-  pkg.installed
-cmake:
-  pkg.installed
-gcc:
-  pkg.installed
-git:
-  pkg.installed
-libjudy-dev:
-  pkg.installed
-liblz4-dev:
-  pkg.installed
-libmnl-dev:
-  pkg.installed
-libssl-dev:
-  pkg.installed
-libuv1-dev:
-  pkg.installed
-make:
-  pkg.installed
-pkg-config:
-  pkg.installed
-uuid-dev:
-  pkg.installed
-zlib1g-dev:
-  pkg.installed
+
+install_deps:
+  pkg.installed:
+    pkgs:
+      - autoconf
+      - autoconf-archive
+      - autogen
+      - automake
+      - cmake
+      - gcc
+      - git
+      - libjudy-dev
+      - liblz4-dev
+      - libmnl-dev
+      - libssl-dev
+      - libuv1-dev
+      - make
+      - pkg-config
+      - uuid-dev
+      - zlib1g-dev
