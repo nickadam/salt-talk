@@ -1,4 +1,6 @@
 
+# This list is OS-specific... consider an os_family map.
+
 install_deps:
   pkg.installed:
     - pkgs:
