@@ -1,7 +1,7 @@
 
 install_deps:
   pkg.installed:
-    pkgs:
+    - pkgs:
       - autoconf
       - autoconf-archive
       - autogen
