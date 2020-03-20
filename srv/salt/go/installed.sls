@@ -8,6 +8,8 @@ install_go:
     - enforce_toplevel: False
     - failhard: True
     - overwrite: True
+    - unless:
+      - test "$(go version)" == "go version go1.14 linux/amd64"
   file.managed:
     - name: /etc/profile.d/go_path.sh
     - mode: '0644'
